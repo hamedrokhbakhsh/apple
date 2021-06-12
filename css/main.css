@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*common styles*/
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  list-style-type: none;
+  box-sizing: border-box;
+  font-family: "Work sans", sans-serif;
+  text-decoration: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+
+:root {
+  --primary-color: #6edea6;
+  --white-color: #fff;
+  --black-color: #000;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*section 1*/
+.section-1 {
+  width: 100%;
+  height: 100vh;
+  background: var(--primary-color);
+  clip-path: polygon(100% 0, 100% 87%, 50% 100%, 0 100%, 0 0);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+  font-size: 10rem;
+  color: rgba(0, 0, 0, .7);
+}
+
+.navbar {
+  position: absolute;
+  top: 3rem;
+  right: 10%;
+}
+
+.navbar-links {
+  display: inline-block;
+  font-size: 2rem;
+  margin: 0 3rem;
+  color: var(--black-color);
+  transition: transform .4s;
+  text-transform: uppercase;
+}
+
+.navbar-links:hover {
+  transform: scale(1.5);
+}
+
+
+/*cube*/
+
+.cube-wrapper {
+  perspective: 100rem;
+  position: relative;
+}
+
+.cube {
+  width: 35rem;
+  height: 55rem;
+  transform-style: preserve-3d;
+
+  position: relative;
+  top: -2rem;
+  transition: all 0.2s;
+
+}
+
+.cube-front {
+  width: 100%;
+  height: 100%;
+  padding: 2.5rem;
+  background: #fee;
+  transform: translateZ(5rem);
+  position: absolute;
+
+  transform-style: preserve-3d;
+  box-shadow: inset .1rem .1rem .1rem #ddd, inset -.1rem -.1rem .1rem #ddd;
+
+}
+
+
+.cube-front::before {
+  content: "";
+  height: 10rem;
+  width: 100%;
+  background: #fee;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateX(-90deg);
+  transform-origin: top;
+  box-shadow: inset .1rem .1rem .1rem #ddd, inset -.1rem -.1rem .1rem #ddd;
+
+}
+
+.cube-front::after {
+  content: "IPhone";
+  width: 10rem;
+  height: 100%;
+  background: #fee;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: rotateY(-90deg);
+  transform-origin: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: #ec1919;
+  box-shadow: inset .1rem .1rem .1rem #ddd, inset -.1rem -.1rem .1rem #ddd;
+
+  font-weight: 300;
+}
+
+.cube-front img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.cube-backside {
+  width: 100%;
+  height: 100%;
+  background: #fee;
+  transform: translateZ(-5rem);
+  position: absolute;
+  transform-style: preserve-3d;
+  box-shadow: inset .1rem .1rem .1rem #ddd, inset -.1rem -.1rem .1rem #ddd;
+
+
+}
+
+.cube-backside::before {
+  content: "";
+  height: 10rem;
+  width: 100%;
+  background: #fee;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+  box-shadow: inset .1rem .1rem .1rem #ddd, inset -.1rem -.1rem .1rem #ddd;
+
+}
+
+.cube-backside::after {
+  content: "iphone";
+  width: 10rem;
+  height: 100%;
+  background: #fee;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateY(-90deg);
+  transform-origin: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: #ec1919;
+  font-weight: 300;
+  box-shadow: inset .1rem .1rem .1rem #ddd, inset -.1rem -.1rem .1rem #ddd;
+
+}
+
+
+.cube-backside i {
+  font-size: 12rem;
+  color: var(--primary-color);
+  text-shadow: .1rem .1rem .2rem #aaa, -.1rem -.1rem .2rem #aaa;
+  transform: rotateY(180deg);
+}
+
+
+/*controls*/
+.controls {
+  position: absolute;
+  bottom: -15rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10rem;
+  height: 10rem;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 50%;
+  padding: 1rem;
+  border: 1rem solid rgba(0, 0, 0, 0.8);
+}
+
+.controls a {
+  position: absolute;
+}
+
+.controls a:nth-child(1) {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.controls a:nth-child(2) {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.controls a:nth-child(3) {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.controls a:nth-child(4) {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.controls a:nth-child(5) {
+  top: 10%;
+  right: 10%;
+  transform: rotate(45deg);
+}
+
+
+.controls a:nth-child(6) {
+  bottom: 10%;
+  left: 10%;
+  transform: rotate(45deg);
+}
+
+.controls i {
+  font-size: 1.7rem;
+  color: var(--primary-color);
+  opacity: 0.4;
+  transition: opacity .5s;
+}
+
+.controls a:hover i {
+  opacity: 1;
+}
+
+/*end of controls*/
+/*end of cube*/
+
+.section-1-banner {
+  flex-direction: column;
+}
+
+.section-1-banner h1 {
+  font-size: 13rem;
+  font-weight: 300;
+  letter-spacing: .3rem;
+  text-transform: uppercase;
+}
+
+.section-1-banner p {
+  font-size: 4rem;
+  font-weight: 400;
+  letter-spacing: .1rem;
+  margin: 4rem 0 4rem 0;
+}
+
+.section-1-banner span {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+
+.section-1-banner button {
+  padding: 2rem 4rem;
+  background: var(--black-color);
+  color: var(--white-color);
+  font-size: 2rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  cursor: pointer;
+  border: none;
+  border-radius: .5rem;
+  transition: clip-path .5s;
+  clip-path: polygon(50% 0%, 88% 6%, 100% 0, 100% 100%, 88% 95%, 50% 100%, 13% 95%, 0 100%, 0 0, 15% 5%);
+
+}
+
+.section-1-banner button:hover {
+  clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
+
+}
+
+/*slideshow*/
+
+.slideshow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.slideshow div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 3s;
+}
+
+.slideshow div.change {
+  opacity: 1;
+  transition: opacity 3s;
+
+}
+
+
+/*end of slide show*/
+/*section 1*/
+/*end common styles*/
+/*section 2*/
+
+
+
+/*end ofsection 2*/
+
